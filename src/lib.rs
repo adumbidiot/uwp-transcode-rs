@@ -26,7 +26,12 @@ mod test {
     fn it_works() {
         futures::executor::block_on(it_works_async()).unwrap();
 
-        assert!(Path::new("./test_output/oof1.mp4").exists());
+        let output_path = Path::new("./test_output/oof1.mp4");
+        assert!(output_path.exists());
+        assert!(output_path.is_file());
+
+        let data = std::fs::read(output_path).unwrap();
+        assert!(!data.is_empty());
     }
 
     async fn it_works_async() -> Result<(), TranscodeError> {
