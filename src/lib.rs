@@ -24,6 +24,8 @@ mod test {
 
     #[test]
     fn it_works() {
+        let _ = std::fs::create_dir_all("test_output").is_ok();
+
         futures::executor::block_on(it_works_async()).unwrap();
 
         let output_path = Path::new("./test_output/oof1.mp4");
