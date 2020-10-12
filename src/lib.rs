@@ -41,7 +41,7 @@ mod test {
 
         let input_file = File::open("./test_data/oof.mp4").await?;
         let output_file = File::create("./test_output/oof1.mp4", Default::default()).await?;
-        let target_profile = MediaProfile::create_hevc(VideoQuality::HD720p)?;
+        let target_profile = MediaProfile::create_hevc(VideoQuality::HD1080p)?;
 
         let prepared_transcode = transcoder
             .prepare_transcode(&input_file, &output_file, &target_profile)
