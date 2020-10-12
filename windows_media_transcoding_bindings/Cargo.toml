@@ -1,0 +1,14 @@
+[package]
+name = "windows_media_transcoding_bindings"
+version = "0.0.0"
+authors = [ "adumbidiot <nathaniel.daniel23@outlook.com>" ]
+edition = "2018"
+
+[dependencies]
+winrt = "0.7.2"
+
+[build-dependencies]
+winrt = "0.7.2"
+
+[package.metadata.winrt.dependencies]
+"Microsoft.Windows.SDK.Contracts" = "10.0.19041.1"
