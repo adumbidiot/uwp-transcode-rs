@@ -24,6 +24,7 @@ pub use windows_media_transcoding_bindings::windows::storage::{
     StorageFolder,
 };
 
+/// Normalize a utf8 path. Fails if normalized path is not utf8.
 pub fn normalize_path(path: &str) -> TranscodeResult<String> {
     let path = OsStr::new(path)
         .encode_wide()
@@ -49,14 +50,18 @@ pub fn normalize_path(path: &str) -> TranscodeResult<String> {
     Ok(path.to_string())
 }
 
+/// Options for when a created file has the same name as another.
 #[derive(Debug, Eq, PartialEq, Copy, Clone, Hash)]
 pub enum CreationOptions {
     /// Creates a new name
     CreateUniqueName,
+
     /// Overwrites
     Overwrite,
+
     /// Fails operation
     Fail,
+
     /// Opens old file
     Open,
 }
@@ -78,12 +83,14 @@ impl Into<CreationCollisionOption> for CreationOptions {
     }
 }
 
+/// A File wrapper
 #[derive(Debug, Clone)]
 pub struct File {
     pub(crate) file: StorageFile,
 }
 
 impl File {
+    /// Open a file at the location.
     pub async fn open(path: &str) -> TranscodeResult<Self> {
         let path = normalize_path(path)?;
         let file = StorageFile::get_file_from_path_async(path)?.await?;
@@ -91,6 +98,7 @@ impl File {
         Ok(File { file })
     }
 
+    /// Create a file at the location.
     pub async fn create(path: &str, options: CreationOptions) -> TranscodeResult<Self> {
         let path = normalize_path(path)?;
         let path = Path::new(&path);
@@ -114,6 +122,7 @@ impl File {
         Ok(Self { file })
     }
 
+    /// Get the inner [`StorageFile`] object.
     pub fn as_storage_file(&self) -> &StorageFile {
         &self.file
     }

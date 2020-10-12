@@ -1,13 +1,22 @@
 pub use crate::bindings::windows::media::transcoding::TranscodeFailureReason;
 
+/// Overall Result Type
 pub type TranscodeResult<T> = Result<T, TranscodeError>;
 
+/// Overall Error Type
 #[derive(Debug)]
 pub enum TranscodeError {
+    /// A WinRT error
     WinRt(winrt::Error),
+
+    /// An I/O Error
     Io(std::io::Error),
+
+    /// A path was used with this library that wasn't utf8.
+    /// Note: Because of limitations in [`winrt::HString`], we cannot use aritrary byte strings
     NonUtf8Path,
 
+    /// Failed to prepare a transcode
     PrepareTranscodeFailure(TranscodeFailureReason),
 }
 
