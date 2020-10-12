@@ -20,7 +20,7 @@ jobs:
           components: rustfmt, clippy 
           override: true
       - name: Install WinRT
-        run: cargo install winrt
+        run: cargo install cargo-winrt
       - name: Rustfmt
         uses: actions-rs/cargo@v1
         with:
@@ -52,7 +52,7 @@ jobs:
      - name: Checkout
        uses: actions/checkout@v2
      - name: Install WinRT
-       run: cargo install winrt
+       run: cargo install cargo-winrt
      - name: Install WinRT Deps
        run: cargo winrt install
      - name: Build
