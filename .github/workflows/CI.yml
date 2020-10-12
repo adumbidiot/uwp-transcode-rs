@@ -19,6 +19,8 @@ jobs:
           toolchain: nightly
           components: rustfmt, clippy 
           override: true
+      - name: Install WinRT
+        run: cargo install winrt
       - name: Rustfmt
         uses: actions-rs/cargo@v1
         with:
@@ -28,6 +30,8 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: fetch
+      - name: Install WinRT Deps
+        run: cargo winrt install
       - name: Clippy
         uses: actions-rs/cargo@v1
         with:
@@ -47,6 +51,10 @@ jobs:
     steps:
      - name: Checkout
        uses: actions/checkout@v2
+     - name: Install WinRT
+       run: cargo install winrt
+     - name: Install WinRT Deps
+       run: cargo winrt install
      - name: Build
        run: cargo build --verbose
      - name: Run Tests
