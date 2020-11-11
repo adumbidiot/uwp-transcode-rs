@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["windows_media_transcoding_bindings"] = [{"text":"impl Future for IAsyncAction","synthetic":false,"types":[]},{"text":"impl&lt;TProgress:&nbsp;RuntimeType + 'static&gt; Future for IAsyncActionWithProgress&lt;TProgress&gt;","synthetic":false,"types":[]},{"text":"impl&lt;TResult:&nbsp;RuntimeType + 'static, TProgress:&nbsp;RuntimeType + 'static&gt; Future for IAsyncOperationWithProgress&lt;TResult, TProgress&gt;","synthetic":false,"types":[]},{"text":"impl&lt;TResult:&nbsp;RuntimeType + 'static&gt; Future for IAsyncOperation&lt;TResult&gt;","synthetic":false,"types":[]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

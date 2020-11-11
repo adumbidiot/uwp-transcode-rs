@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["CreationOptions","Options for when a created file has the same name as another."]],"fn":[["normalize_path","Normalize a utf8 path. Fails if normalized path is not utf8."]],"struct":[["CreationCollisionOption",""],["File","A File wrapper"],["StorageFile",""],["StorageFolder",""]]});

@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["uwp_transcode"] = [{"text":"impl Hash for CreationOptions","synthetic":false,"types":[]},{"text":"impl Hash for VideoQuality","synthetic":false,"types":[]},{"text":"impl Hash for AudioQuality","synthetic":false,"types":[]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
