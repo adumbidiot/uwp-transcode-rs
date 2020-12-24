@@ -6,10 +6,12 @@ edition = "2018"
 license = "MIT"
 
 [dependencies]
-winrt = "0.7.2"
+# winrt = "0.7.2"
+winrt = { git = "https://github.com/microsoft/winrt-rs", rev = "375fca433bb77e097681e63a22562d0f8d3dec1e" }
 
 [build-dependencies]
-winrt = "0.7.2"
+# winrt = "0.7.2"
+winrt = { git = "https://github.com/microsoft/winrt-rs", rev = "375fca433bb77e097681e63a22562d0f8d3dec1e" }
 
 [package.metadata.winrt.dependencies]
 "Microsoft.Windows.SDK.Contracts" = "10.0.19041.1"
