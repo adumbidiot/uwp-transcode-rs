@@ -11,7 +11,7 @@ windows_media_transcoding_bindings = { path = "./windows_media_transcoding_bindi
 winrt = "0.7.2"
 
 [dev-dependencies]
-futures = "0.3.8"
+futures = "0.3.11"
 
 [workspace]
 members = [ "windows_media_transcoding_bindings" ]
