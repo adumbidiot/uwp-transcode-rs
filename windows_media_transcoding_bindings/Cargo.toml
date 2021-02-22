@@ -6,10 +6,10 @@ edition = "2018"
 license = "MIT"
 
 [dependencies]
-winrt = "0.7.2"
+winrt = "0.8.0"
 
 [build-dependencies]
-winrt = "0.7.2"
+winrt = "0.8.0"
 
 [package.metadata.winrt.dependencies]
 "Microsoft.Windows.SDK.Contracts" = "10.0.19041.1"
